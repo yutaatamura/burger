@@ -1,0 +1,20 @@
+<div class="row">
+
+
+    <h1>Burgers to Eat!</h1>
+
+    <ul>
+        {{#each burgers}}
+            {{#unless devoured}}
+                <li>
+                    <p> 
+                        {{this.id}}. {{this.burger_name}}
+
+                        <button data-burgerid="{{this.id}}" class="delBurger">Devour this burger!</button>
+                    </p>
+                </li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+
+</div>
