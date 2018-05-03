@@ -1,20 +1,27 @@
-<div class="row">
+<div class="container">
+    <div class="row">
 
+        <div class="col-md-12">
+            <h1>Burgers to Eat!</h1>
+        </div>
+    </div>
 
-    <h1>Burgers to Eat!</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <li>
+                            <p> 
+                                {{this.id}}. {{this.burger_name}}
 
-    <ul>
-        {{#each burgers}}
-            {{#unless devoured}}
-                <li>
-                    <p> 
-                        {{this.id}}. {{this.burger_name}}
+                                <button data-burgerid="{{this.id}}" class="delBurger">Devour this burger!</button>
+                            </p>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
 
-                        <button data-burgerid="{{this.id}}" class="delBurger">Devour this burger!</button>
-                    </p>
-                </li>
-            {{/unless}}
-        {{/each}}
-    </ul>
-
+    </div>
 </div>

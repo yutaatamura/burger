@@ -1,19 +1,27 @@
 var burger = require('../models/burger.js');
+var express = require('express');
+var router = express.Router();
 
-module.exports = function(app) {
+// module.exports = function(app) {
 
-    app.get('/', function(req,res) {
+    router.get('/', function(req, res) {
+        res.redirect('/index');
+    });
+
+    router.get('/index', function(req,res) {
         burger.all(function(data) {
             res.render('index', {burgers: data});
         });
     });
 
-    app.put('/api/devour/:id', function(req, res) {
+    router.put('/api/devour/:id', function(req, res) {
         var id = req.params.id;
         console.log(id);
         burger.devour(id, function(data) {
             console.log(data);
         });
     });
-}
+// }
+
+module.exports = router;
 
