@@ -21,6 +21,11 @@ var router = express.Router();
             console.log(data);
         });
     });
+
+    router.post('/api/create', function(req, res) {
+        var newBurger = req.body.burger;
+        console.log(newBurger);
+    })
 // }
 
 module.exports = router;
