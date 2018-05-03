@@ -24,7 +24,10 @@ var router = express.Router();
 
     router.post('/api/create', function(req, res) {
         var newBurger = req.body.burger;
-        console.log(newBurger);
+        console.log("I am the new burger"+newBurger);
+        burger.create({burger: newBurger}, function(data) {
+            console.log(data)
+        })
     })
 // }
 

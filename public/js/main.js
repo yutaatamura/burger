@@ -14,7 +14,7 @@ $(function() {
 
     $(".createBurger").on("click", function(){
         var newBurger = $('#newBurger').val().trim();
-        $.post('/api/burger', {burger: newBurger}, function(data) {
+        $.post('/api/create', {burger: newBurger}, function(data) {
             if(data){
                 location.reload();
             }

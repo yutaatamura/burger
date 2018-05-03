@@ -9,17 +9,17 @@ var orm = {
             cbk(result);
         });
     },
-    insertOne: function(tableInput, colsData, cbk) {
+    insertOne: function(tableInput, col, cbk) {
         var queryString = "INSERT INTO ?? SET ?";
-        connection.query(queryString, [tableInput, colsData]), function(err, result) {
+        connection.query(queryString, [tableInput, col]), function(err, result) {
             if (err) throw err;
             console.log(result);
             cbk(result);
         }
     },
-    updateOne: function(tableInput, colsData, id, cbk) {
+    updateOne: function(tableInput, col, id, cbk) {
         var queryString = "UPDATE ?? SET ?? WHERE id = ?";
-        connection.query(queryString, [tableInput, colsData, id]), function (err, result) {
+        connection.query(queryString, [tableInput, col, id]), function (err, result) {
             if (err) throw err;
             console.log(result);
             cbk(result);
