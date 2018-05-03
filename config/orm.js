@@ -1,19 +1,30 @@
 var connection = require('../config/connection.js');
 
 var orm = {
-    selectAll: function(whatToSelect, tableInput) {
-        var queryString = "SELECT ?? FROM ??";
-        connection.query(queryString, [whatToSelect, tableInput], function(err, result) {
+    selectAll: function(tableInput, cbk) {
+        var queryString = "SELECT * FROM ??";
+        connection.query(queryString, [tableInput], function(err, result) {
             if (err) throw err;
             console.log(result);
+            cbk(result);
         });
     },
-    insertOne: function(tableInput, cols, vals, cb) {
-        var queryString = "INSERT INTO ?? (??) VALUES (?)";
-        connection.query(queryString, [tableInput, cols, vals]), function(err, result) {
+    insertOne: function(tableInput, colsData, cbk) {
+        var queryString = "INSERT INTO ?? SET ?";
+        connection.query(queryString, [tableInput, colsData]), function(err, result) {
             if (err) throw err;
             console.log(result);
+            cbk(result);
         }
     },
-    updateOne: function(tableInput, )
-}
+    updateOne: function(tableInput, colsData, id, cbk) {
+        var queryString = "UPDATE ?? SET ?? WHERE id = ?";
+        connection.query(queryString, [tableInput, colsData, id]), function (err, result) {
+            if (err) throw err;
+            console.log(result);
+            cbk(result);
+        }
+    }
+};
+
+module.exports = orm;
