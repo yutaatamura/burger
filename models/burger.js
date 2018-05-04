@@ -12,7 +12,7 @@ var burger = {
         });
     },
     devour: function(id, cbk) {
-        orm.updateOne('burgers', {devoured: 0}, id, function(data) {
+        orm.updateOne('burgers', devoured, id, function(data) {
             cbk(data);
         });
     }
