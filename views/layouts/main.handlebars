@@ -18,28 +18,35 @@
 
   <script src="./js/main.js"></script>
 
+  <link rel="stylesheet" href="./css/styles.css">
 
-	{{!-- <link rel="stylesheet" type="text/css" href="/assets/css/burger_style.css"> --}}
+
 </head>
 
 <body>
-
-  <div class="row">
-    <div class="col-md-12">
-            <form>
-                <div class="form-group">
-                    <label for="newBurger">Create a Burger</label>
-                    <input type="text" class="form-control" id="newBurger" placeholder="Enter your creation">
-                </div>
-                <button class="btn-primary createBurger">Add Your Burger!</button>
-            </form>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Eat Da Burger!</h1>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+              <form>
+                  <div class="form-group">
+                      <label for="newBurger">Create a Burger</label>
+                      <input type="text" class="form-control" id="newBurger" placeholder="Enter your creation">
+                  </div>
+                  <button class="btn-primary createBurger">Add Your Burger!</button>
+              </form>
+      </div>
+    </div>
+    <br>
+    <div class="row">
 
-  <div class="row">
+    {{{ body }}}
 
-	{{{ body }}}
-
+    </div>
   </div>
 </body>
 

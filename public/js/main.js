@@ -4,8 +4,8 @@ $(document).ready(function() {
         var id = $(this).data("burgerid");
   
 
-    $.ajax("burgers/api/devour/" + id, {
-        type: "POST"
+    $.ajax("/burgers/" + id, {
+        type: "PUT"
         }).then(function() {
     console.log("updated the ID " + id)
     location.reload();
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $(".createBurger").on("click", function(){
         var newBurger = $('#newBurger').val().trim();
-        $.post('burgers/api/create', {burger: newBurger}, function(data) {
+        $.post('/burgers', {burger: newBurger}, function(data) {
             if(data){
                 location.reload();
             }
