@@ -9,7 +9,7 @@ var orm = {
             cbk(result);
         });
     },
-    insertOne: function(tableInput, col, cbk) {
+    insertOne: function(tableInput, col1, cbk) {
         var queryString = "INSERT INTO ?? SET ?";
         connection.query(queryString, [tableInput, col]), function(err, result) {
             if (err) throw err;
@@ -18,10 +18,10 @@ var orm = {
         }
     },
     updateOne: function(tableInput, col, id, cbk) {
-        var queryString = "UPDATE ?? SET ?? WHERE id = ?";
+        var queryString = "UPDATE ?? SET ? WHERE id = ?";
         connection.query(queryString, [tableInput, col, id]), function (err, result) {
             if (err) throw err;
-            console.log(result);
+            console.log("this is result"+result);
             cbk(result);
         }
     }

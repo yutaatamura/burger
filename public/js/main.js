@@ -1,11 +1,13 @@
-$(function() {
+$(document).ready(function() {
+
     $(".delBurger").on("click", function(){
         var id = $(this).data("burgerid");
   
 
     $.ajax("/api/devour/" + id, {
-        type: "PUT", 
+        type: "PUT"
         }).then(function() {
+    console.log("updated the ID " + id)
     location.reload();
     })
 })
@@ -20,6 +22,7 @@ $(function() {
             }
         })
     })
+
 
 
 
